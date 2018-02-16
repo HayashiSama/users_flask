@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+      <title>Home Page</title>
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+      <div class="container">
+      <h1>Index Page</h1>
+     
+        
+      <table>
+        <tr>
+          <td> Id </td>
+          <td> Full Name </td>
+          <td> Email </td>
+          <td> Created At </td>
+          <td> Actions </td>
+        </tr>
+        {% for x in users %}
+        <tr>
+          <td> {{x.id}}</td>
+          <td> <a href="/users/{{x.id}}">{{x.name}}</a></td>
+          <td>{{x.email}}</td>
+          <td>{{x.date1}}</td>
+          <td> <a href="/users/{{x.id}}">Show</a> <a href="/users/{{x.id}}/edit"> Edit </a> <a href="/users/{{x.id}}/destroy"> Delete </a></td>
+        </tr>
+        
+        {% endfor %}
+      </table>
+
+      <a href="/users/new">Add a new user</a>
+      
+
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </div>
+    </body>
+</html>
